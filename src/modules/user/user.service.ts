@@ -2,7 +2,9 @@ import { pool } from "../../config/db";
 import bcrypt from "bcryptjs";
 
 const getUsers = async () => {
-  const users = await pool.query(`SELECT * FROM users`);
+  const users = await pool.query(
+    `SELECT id, name, email, phone, role FROM users`
+  );
 
   if (users.rows.length === 0) {
     throw new Error("No User Found!");

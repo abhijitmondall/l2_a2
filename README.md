@@ -41,11 +41,7 @@
 
 #### 3. Configure environment variables in .env file:
 
-`DATABASE_URL=your_postgresql_connection_string
-
-JWT_SECRET=your_jwt_secret
-
-PORT=3000`
+`DATABASE_URL=your_postgresql_connection_string JWT_SECRET=your_jwt_secret PORT=3000`
 
 ## Run the server
 
