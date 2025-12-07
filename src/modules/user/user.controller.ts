@@ -63,6 +63,8 @@ const updateUser = async (req: Request, res: Response) => {
       throw new Error(`No User Found with this id: ${userId}`);
     }
 
+    updatedUser.password = undefined;
+
     res.status(200).json({
       success: true,
       message: "User Updated successfully",

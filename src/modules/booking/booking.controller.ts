@@ -164,7 +164,10 @@ const updateBookings = async (req: Request, res: Response) => {
 
     res.status(200).json({
       success: true,
-      message: "Booking cancelled successfully",
+      message:
+        req.body?.status === "returned"
+          ? "Booking marked as returned. Vehicle is now available"
+          : "Booking cancelled successfully",
       data: updatedBooking,
     });
   } catch (err: any) {

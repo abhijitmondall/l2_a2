@@ -4,6 +4,7 @@ import { authService } from "./auth.service";
 const signup = async (req: Request, res: Response) => {
   try {
     const newUser = await authService.signup(req.body);
+    newUser.rows[0].password = undefined;
 
     res.status(201).json({
       success: true,
